@@ -1,0 +1,701 @@
+/* ========== GLOBAL ========== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #eef5f0;
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 800;
+    color: #155d2d;
+    margin-bottom: 25px;
+}
+
+/* ========== HERO HEADER ========== */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+    background-image: url('image/desa_foto_bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.logo-kab {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* ========== HEADER LEFT (LOGO + JUDUL) ========== */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+    padding: 10px 0;
+}
+
+.logo-kab {
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 10;
+}
+
+.logo-kab img {
+    width: 80px;
+}
+
+.judul-desa {
+    text-align: left;
+    margin-top: -20px;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: #124e27;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: #1f7a3d;
+}
+
+/* ========== SECTION ========== */
+section {
+    width: 90%;
+    max-width: 950px;
+    background: white;
+    margin: 50px auto;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section p {
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background: #e5f6ec;
+    color: #0f5132;
+    padding: 12px 20px;
+    margin: 8px auto;
+    width: 80%;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* ========== STRUKTUR ========== */
+.struktur-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffffa3;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.struktur-container > .card-struktur:first-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.struktur-container > .card-struktur:first-child img {
+    max-width: 185px;
+    height: 185px;
+}
+
+.card-struktur {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card-struktur:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-struktur img {
+    width: 100%;
+    max-width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+}
+
+.card-struktur h3 {
+    margin: 5px 0;
+    font-size: 1.0em;
+    color: #1a5e37;
+    font-weight: 700;
+}
+
+.card-struktur p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+    font-weight: 400;
+}
+
+.empty-space {
+    width: 100%;
+    height: 0;
+}
+
+.bpd-left {
+    grid-column: 1;
+}
+
+.bpd-right {
+    grid-column: 3;
+}
+
+/* ========== PENDUDUK ========== */
+.penduduk-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto 40px auto;
+    padding: 15px 25px;
+    background-color: #e5f6ec;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#penduduk h3 {
+    font-size: 1.5em;
+    color: #0e5022;
+    margin-bottom: 20px;
+}
+
+.penduduk-umur {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px 25px;
+    background-color: #f0faf3;
+    border-radius: 12px;
+    gap: 15px;
+}
+
+.penduduk-umur p {
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: white;
+    font-weight: 500;
+    color: #155d2d;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* ========== PETA ========== */
+.container-peta {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card-info {
+    flex: 1;
+    background: #f0faf3;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.map-container {
+    flex: 2;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+}
+
+/* ========== PETA CITRA ========== */
+.peta-citra-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #e0e0e0;
+    width: 100%; /* Pastikan mengambil lebar penuh */
+    clear: both; /* Hapus efek float jika ada */
+}
+
+.peta-citra-section h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #155d2d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.peta-citra-container {
+    width: 100%;
+    max-width: 100%; /* Pastikan tidak dibatasi */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+.peta-citra-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== UMKM BARU (Menggunakan GRID) ========== */
+.umkm-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+}
+
+.umkm-grid .card {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.umkm-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+}
+
+.umkm-grid .card img {
+    width: 100%;
+    max-width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.umkm-grid .card h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #155d2d;
+    margin-bottom: 5px;
+}
+
+.umkm-grid .card p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background: #124e27;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    .struktur-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .struktur-container > .card-struktur:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .umkm-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        gap: 25px;
+    }
+
+    .penduduk-box,
+    .penduduk-umur {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .penduduk-box p,
+    .penduduk-umur p {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .struktur-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .card-struktur img {
+        max-width: 150px;
+        height: 150px;
+    }
+
+    .struktur-container > .card-struktur:first-child {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+
+    .struktur-container > .card-struktur:first-child img {
+        max-width: 200px;
+        height: 200px;
+    }
+}
+
+/* ====== GRID KHUSUS SUSUNAN BPD ====== */
+.empty-space {
+    width: 100%;
+    height: 0; 
+}
+
+.bpd-left {
+    grid-column: 1;
+}
+
+.bpd-right {
+    grid-column: 3;
+}
+
+/* Styling untuk .penduduk-box yang sudah ada */
+.penduduk-box {
+    /* Mengatur agar data total penduduk tampil sejajar 3 kolom */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto 40px auto; /* Tambahkan margin bawah untuk memisahkan dari data umur */
+    padding: 15px 25px;
+    background-color: #e5f6ec;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Styling untuk judul Kelompok Umur */
+#penduduk h3 {
+    font-size: 1.5em;
+    color: #0e5022;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk div Kelompok Umur */
+.penduduk-umur {
+    /* Mengatur agar data umur tampil sejajar 3 kolom */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px 25px;
+    background-color: #f0faf3; /* Warna sedikit berbeda */
+    border-radius: 12px;
+    gap: 15px;
+}
+
+/* Styling teks di dalam Kelompok Umur */
+.penduduk-umur p {
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: white;
+    font-weight: 500;
+    color: #155d2d;
+    text-align: center;
+    flex-grow: 1; /* Agar elemen tumbuh mengisi ruang yang tersedia */
+}
+
+/* Responsif untuk layar kecil/ponsel */
+@media (max-width: 768px) {
+    .penduduk-box,
+    .penduduk-umur {
+        flex-direction: column; /* Ubah menjadi kolom vertikal di ponsel */
+        align-items: flex-start;
+        padding: 20px;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .penduduk-box p,
+    .penduduk-umur p {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+}
+
+/* CONTAINER INDUK: Mengatur Logo dan Judul berdampingan */
+.header-left {
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Memposisikan item (logo dan teks) di tengah secara vertikal */
+    justify-content: flex-start; /* Memastikan semuanya berada di sebelah kiri */
+    gap: 20px; /* Memberi jarak 20px antara logo dan tulisan */
+    width: 100%; /* Memastikan header-left mengisi lebar penuh */
+}
+
+/* KHUSUS LOGO: Mengatur posisi absolut menjadi relatif, karena kita menggunakan Flexbox */
+.logo-kab {
+    position: relative; /* Ganti dari absolute agar Flexbox bisa mengaturnya */
+    top: auto;
+    left: auto;
+    z-index: 10;
+}
+
+/* KHUSUS JUDUL: Mengatur perataan teks */
+.judul-desa {
+    /* Mengubah perataan teks dari header.hero (center) menjadi left */
+    text-align: left; 
+}
+
+/* MENGATUR ULANG HEADER UTAMA */
+.hero {
+    /* Hapus text-align: center; dan atur padding agar menyisakan ruang di kiri-atas */
+    padding: 20px 20px; /* Padding minimal di atas dan kiri-kanan */
+    text-align: left; /* Teks default di header rata kiri */
+    
+    /* Tambahkan display flex untuk memuat .header-left dan memposisikannya */
+    display: flex;
+    align-items: flex-start; /* Memastikan konten dimulai dari atas */
+}
+
+/* Hapus padding besar di body hero. */
+.hero h1 {
+    font-size: 35px; /* Mengurangi ukuran agar muat di samping logo */
+    margin: 0;
+}
+.hero p {
+    margin: 0; /* Hapus margin atas/bawah */
+    font-size: 16px;
+}
+
+/* Styling yang sudah ada di style.css */
+
+.hero {
+    position: relative;
+    text-align: center; /* Hapus atau ganti ke left */
+    padding: 80px 20px; /* Pertahankan padding untuk ruang latar */
+    color: white;
+    background-image: url('image/desa_foto_bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* GANTI INI UNTUK MENDORONG KONTEN KE KIRI ATAS */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px; /* Kurangi padding atas agar logo lebih ke atas */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* KONTENER LOGO DAN JUDUL */
+.header-left {
+    display: flex; /* Aktifkan Flexbox agar logo dan judul berdampingan */
+    align-items: center; /* Sejajarkan vertikal di tengah */
+    gap: 15px; /* Jarak antara logo dan teks */
+    position: relative; /* Penting! Tetap relative terhadap .hero */
+    z-index: 2;
+    padding: 10px 0; /* Memberi sedikit padding di dalam header-left */
+    /* Hapus width: 100%; agar tidak memakan ruang yang tidak perlu jika ada elemen lain di .hero */
+}
+
+/* LOGO: Posisikan RELATIVE */
+.logo-kab {
+    position: relative; /* Hapus position: absolute yang lama */
+    top: auto;
+    left: auto;
+    z-index: 10;
+}
+
+.logo-kab img {
+    width: 80px; /* Mungkin kurangi sedikit agar terlihat pas */
+}
+
+/* JUDUL: Atur perataan teks */
+.judul-desa {
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 30px; /* Kurangi ukuran h1 agar lebih kompak */
+    margin: 0;
+}
+
+.hero p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* KHUSUS JUDUL: Atur perataan teks dan geser ke atas */
+.judul-desa {
+    text-align: left; 
+    margin-top: -20px; /* Nilai ini akan menggeser teks 10px ke atas */
+}
+
+/* Pastikan margin h1 dan p di dalamnya tetap 0 agar tidak mengganggu */
+.hero h1 {
+    font-size: 30px; 
+    margin: 0;
+}
+
+.hero p {
+    font-size: 16px;
+    margin: 0;
+}
+/* Styling untuk membuat kontak desa sejajar horizontal */
+.kontak-wrapper {
+    /* MENGGUNAKAN FLEXBOX UNTUK MENYEJAJARKAN KE SAMPING */
+    display: flex;
+    
+    /* Posisikan item di tengah secara horizontal dan beri jarak antar item */
+    justify-content: center;
+    
+    /* Jarak antara item */
+    gap: 30px; 
+    
+    /* Memungkinkan item untuk pindah baris saat layar kecil */
+    flex-wrap: wrap; 
+    
+    margin-top: 25px; /* Tambah jarak dari judul */
+    margin-bottom: 20px;
+}
+
+.kontak-wrapper p {
+    /* Hapus margin p agar Flexbox mengaturnya */
+    margin: 0;
+    
+    /* Pastikan ikon dan teks berada pada satu baris dan sejajar di tengah */
+    display: flex;
+    align-items: center;
+    
+    font-size: 17px;
+    font-weight: 500;
+    color: #1a5e37; /* Sesuaikan warna agar lebih gelap */
+}
+
+.kontak-wrapper p i {
+    /* Jarak antara ikon dan teks */
+    margin-right: 8px;
+    font-size: 20px; 
+}
+
+/* RESPONSIVE: Mengatur kembali menjadi vertikal di layar ponsel */
+@media (max-width: 768px) {
+    .kontak-wrapper {
+        /* Ubah menjadi kolom vertikal di layar yang lebih kecil */
+        flex-direction: column; 
+        gap: 15px;
+        align-items: center; /* Posisikan item di tengah halaman */
+    }
+}
